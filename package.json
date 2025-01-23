@@ -2,15 +2,20 @@
   "name": "fastify-postgres",
   "version": "1.0.0",
   "main": "app.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "nodemon db.js",
+    "dev": "node --watch --no-warnings server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "fastify": "^5.2.1"
+    "fastify": "^5.2.1",
+    "fastify-postgres": "file:",
+    "nodemon": "^3.1.9",
+    "pg": "^8.13.1"
   }
 }

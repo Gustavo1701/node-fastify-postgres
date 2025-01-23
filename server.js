@@ -1,15 +1,11 @@
-const Fastify = require('fastify');
+import { fastify } from 'fastify'
 
-const appRoute = require('./src/home') 
+const server = fastify();
 
-function createServer() {
-    const fastify = Fastify({
-        logger:true,
-    });
-    
-    fastify.register(appRoute);
+server.get('/', () => {
+    return('Servidor rodando.')
+});
 
-    return fastify;
-}
-
-module.exports = createServer;
+server.listen({
+    port:3000,
+});
