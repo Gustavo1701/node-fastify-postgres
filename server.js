@@ -4,13 +4,14 @@ import { pool } from './db.js';
 const server = fastify();
 
 // Rota para consultar a hora no banco de dados
-server.get('/pastel', async (req, res) => {
+server.get('/pasteis', async (req, res) => {
     try {
         const consulta = await pool.query('SELECT * FROM pastel'); 
 
         res.send({
             menssage: 'Retornou pasteis',
-            data: consulta.rows,
+            qtd: consulta.rowCount,
+            data: consulta.rows, // Aqui você usa consulta.rows, que contém os dados retornados
         });
 
     } catch (err) {

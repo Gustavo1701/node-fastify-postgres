@@ -11,3 +11,13 @@ export const pool = new Pool({
         rejectUnauthorized: false,
     },
 });
+
+pool.connect()
+    .then(() => {
+        console.log('[OK] Conectado;');        
+    })
+    .catch(() =>{
+        console.log('[ERRO] Erro ao conectar no banco:', err.stack);        
+    });
+
+
