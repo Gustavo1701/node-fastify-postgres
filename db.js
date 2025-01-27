@@ -16,7 +16,7 @@ pool.connect()
     .then(() => {
         console.log('[OK] Conectado;');        
     })
-    .catch(() =>{
+    .catch((err) => {
         console.log('[ERRO] Erro ao conectar no banco:', err.stack);        
     });
 
